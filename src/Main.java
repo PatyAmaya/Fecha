@@ -1,17 +1,17 @@
 import java.time.*;
 
-public class TestFecha
+public class Main
 {
     public static void main(String []args){
-        Fecha fechaNacimientoJuan = new Fecha(2011, JULIO, 10);
-        Fecha fechaIngresoJuan = new Fecha(2018, AGOSTO, 25);
+        Fecha fechaNacimientoJuan = new Fecha(2011, "JULIO", 10);
+        Fecha fechaIngresoJuan = new Fecha(2018, "AGOSTO", 25);
 
-        Fecha fechaNacimientoMaria = new Fecha(2012, ENERO, 10);
-        Fecha fechaIngresoMaria = new Fecha(2017, NOVIEMBRE, 15);
+        Fecha fechaNacimientoMaria = new Fecha(2012, "ENERO", 10);
+        Fecha fechaIngresoMaria = new Fecha(2017, "NOVIEMBRE", 15);
 
         Fecha fechaActual = new Fecha();
 
-        System.out.println("Hoy es: " + fechaActual.format("dd/mm/yyyy"));
+        System.out.println("Hoy es: "+ fechaActual.format("dd/mm/yyyy"));
 
         System.out.println("Juan nació el: " + fechaNacimientoJuan.format("dd/mm/yyyy") + ", hace " + fechaNacimientoJuan.diferenciaEnAnios(fechaActual) + " años");
 

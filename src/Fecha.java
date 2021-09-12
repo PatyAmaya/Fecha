@@ -4,17 +4,19 @@ public class Fecha {
     private int anio;
     private int mes;
     private int dia;
+    private String nombreMes;
 
 
     public Fecha() {
         dia = LocalDate.now().getDayOfMonth();
         mes = LocalDate.now().getMonthValue();
         anio = LocalDate.now().getYear();
+        nombreMes=getNombreMes(mes);
     }
 
-    public Fecha(int year, int month, int day) {
+    public Fecha(int year, String nombreMes, int day) {
         anio = year;
-        mes = month;
+        mes = getNumMes(nombreMes);
         dia = day;
 
         if (mes > 12) {
@@ -70,8 +72,7 @@ public class Fecha {
             }
 
         }
-
-
+        nombreMes=getNombreMes(mes);
     }
 
     public boolean isBefore(Fecha fecha){
@@ -267,8 +268,9 @@ public class Fecha {
         return difEnAnios;
     }
 
- /*   public void format(String formato)
+    public String format(String formato)
     {
+        String salidaFecha="";
         String f1="yyyy/mm/dd";
         String f2="dd/mm/yyyy";
         String f3="yyyy/dd/mm";
@@ -276,8 +278,84 @@ public class Fecha {
         String f5="dd-mm-yyyy";
         String f6="yyyy-dd-mm";
 
-        if(formato.compareTo(f1)){
-
+        if(formato==f1){
+            salidaFecha=anio+"/"+mes+"/"+dia;
         }
-    }*/
+        if(formato==f2){
+            salidaFecha=dia+"/"+mes+"/"+anio;
+        }
+        if(formato==f3){
+            salidaFecha=anio+"/"+dia+"/"+mes;
+        }
+        if(formato==f4){
+            salidaFecha=anio+"-"+mes+"-"+dia;
+        }
+        if(formato==f5){
+            salidaFecha=dia+"-"+mes+"-"+anio;
+        }
+        if(formato==f6){
+            salidaFecha=anio+"-"+dia+"-"+mes;
+        }
+        return salidaFecha;
+    }
+
+    public String getNombreMes(int mes){
+        String nombre="";
+        if(mes==1){
+            nombre="ENERO";
+        }if(mes==2){
+            nombre="FEBRERO";
+        }if(mes==3) {
+            nombre = "MARZO";
+        }if(mes==4) {
+            nombre = "ABRIL";
+        }if(mes==5) {
+            nombre = "MAYO";
+        }if(mes==6) {
+            nombre = "JUNIO";
+        }if(mes==7) {
+            nombre = "JULIO";
+        }if(mes==8) {
+            nombre = "AGOSTO";
+        }if(mes==9) {
+            nombre = "SEPTIEMBRE";
+        }if(mes==10) {
+            nombre = "OCTUBRE";
+        }if(mes==11) {
+            nombre = "NOVIEMBRE";
+        }if(mes==12) {
+            nombre = "DICIEMBRE";
+        }
+        return nombre;
+    }
+
+    public int getNumMes(String nombreMes){
+        int num=0;
+        if(nombreMes=="ENERO"){
+            num = 01;
+        }else if(nombreMes=="FEBRERO"){
+            num = 02;
+        }else if(nombreMes=="MARZO") {
+            num = 03;
+        }else if(nombreMes=="ABRIL") {
+            num = 04;
+        }else if(nombreMes=="MAYO") {
+            num = 05;
+        }else if(nombreMes=="JUNIO") {
+            num = 06;
+        }else if(nombreMes=="JULIO") {
+            num = 07;
+        }else if(nombreMes=="AGOSTO") {
+            num = 8;
+        }else if(nombreMes=="SEPTIEMBRE") {
+            num = 9;
+        }else if(nombreMes=="OCTUBRE") {
+            num = 10;
+        }else if(nombreMes=="NOVIEMBRE") {
+            num = 11;
+        }else if(nombreMes=="DICIEMBRE") {
+            num = 12;
+        }
+        return num;
+    }
 }
