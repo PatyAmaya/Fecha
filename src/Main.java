@@ -30,53 +30,10 @@ public class Main
         }
 
         System.out.println("Desde que ingresó Juan en " + fechaIngresoJuan.format("yyyy-mm-dd") + " han pasado " + fechaActual.diferenciaEnAnios(fechaIngresoJuan) + " años");
-        System.out.println("Desde que ingresó Maria en " + fechaIngresoJuan.format("yyyy-mm-dd") + " han pasado " + fechaActual.diferenciaEnAnios(fechaNacimientoMaria) + " años");
+        System.out.println("Desde que ingresó Maria en " + fechaIngresoJuan.format("yyyy-mm-dd") + " han pasado " + fechaActual.diferenciaEnAnios(fechaIngresoMaria) + " años");
 
     }
 }
 
-
-/*public class Main {
-
-    public static void main(String[] args) {
-        int diferenciaEnDias = 0, diferenciaEnAnios = 0;
-        boolean antes, despues, igual;
-        //Fecha fecha=new Fecha();
-
-        Fecha fecha1 = new Fecha(2001, 12, 14);
-
-        Fecha fecha2 = new Fecha(2001, 12, 11);
-
-        //fecha2.avanzaDias(45);
-        //fecha.retrocedeDias(35);
-
-        diferenciaEnDias = fecha1.tiempoTranscurridoEnDias(fecha2);
-        System.out.println("Dias: " + diferenciaEnDias);
-
-        diferenciaEnAnios = fecha1.tiempoTranscurridoEnAnios(fecha2);
-        System.out.println("Anios: " + diferenciaEnAnios);
-
-        antes = fecha2.esAntes(fecha1);
-        if (antes == true) {
-            System.out.println("Sí es antes");
-        } else {
-            System.out.println("No es antes");
-        }
-
-        despues = fecha2.esDespues(fecha1);
-        if (despues == true) {
-            System.out.println("Sí es despues");
-        } else {
-            System.out.println("No es despues");
-        }
-
-        igual = fecha1.esMismoDia(fecha2);
-        if (igual == true) {
-            System.out.println("Es el mismo dia");
-        } else {
-            System.out.println("No es el mismo dia");
-        }
-    }
-}*/
 
 

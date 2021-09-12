@@ -263,7 +263,7 @@ public class Fecha {
     }
 
     public int diferenciaEnAnios(Fecha fecha2){
-        int difEnAnios;
+        int difEnAnios=0;
         difEnAnios=Math.abs(anio-fecha2.anio);
         return difEnAnios;
     }
